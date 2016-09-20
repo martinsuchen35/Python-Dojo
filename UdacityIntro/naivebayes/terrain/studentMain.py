@@ -32,6 +32,12 @@ clf = classify(features_train, labels_train)
 prettyPicture(clf, features_test, labels_test)
 output_image("test.png", "png", open("test.png", "rb").read())
 
+### calculate NB accuracy - method 1
+print clf.score(features_test, labels_test)
 
+### calculate NB accuracy - method 2
+from sklearn.metrics import accuracy_score
+pred = clf.predict(features_test)
+print accuracy_score(pred, labels_test)
 
 
