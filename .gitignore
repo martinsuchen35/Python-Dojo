@@ -1,3 +1,7 @@
+.DS_Store
+UdacityIntro/naivebayes/enron_mail_20150507.tgz
+UdacityIntro/naivebayes/maildir/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
