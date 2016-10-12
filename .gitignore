@@ -1,6 +1,6 @@
 .DS_Store
-UdacityIntro/naivebayes/enron_mail_20150507.tgz
-UdacityIntro/naivebayes/maildir/
+UdacityIntro/enron_mail_20150507.tgz
+UdacityIntro/maildir/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
