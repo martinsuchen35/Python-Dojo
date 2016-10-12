@@ -34,3 +34,14 @@ output_image("test.png", "png", open("test.png", "rb").read())
 
 print NBAccuracy1(features_train, labels_train, features_test, labels_test)
 print NBAccuracy2(features_train, labels_train, features_test, labels_test)
+
+# TODO: refactor
+from sklearn.svm import SVC
+clf = SVC(kernel="linear")
+clf.fit(features_train, labels_train)
+pred = clf.predict(features_test)
+
+from sklearn.metrics import accuracy_score
+accuracy = accuracy_score(pred, labels_test)
+print(accuracy)
+# SVM's accuracy is 0.92 which is more accurate than NB's 0.884!
