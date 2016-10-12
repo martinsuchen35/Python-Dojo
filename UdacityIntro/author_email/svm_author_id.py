@@ -30,16 +30,16 @@ from sklearn.svm import SVC
 clf = SVC(kernel="linear")
 
 t2 = time()
-clf.fit(features_train, labels_train)
+# clf.fit(features_train, labels_train)
 print "SVC training time:", round(time() - t2, 3), "s"
 
 t3 = time()
-pred = clf.predict(features_test)
+# pred = clf.predict(features_test)
 print "SVC prediction time:", round(time() - t3, 3), "s"
 
 from sklearn.metrics import accuracy_score
-accuracy = accuracy_score(pred, labels_test)
-print(accuracy)
+# accuracy = accuracy_score(pred, labels_test)
+# print(accuracy)
 
 # no. of Chris training emails: 7936
 # no. of Sara training emails: 7884
@@ -73,3 +73,105 @@ print(accuracy)
 # SVC prediction time: 0.951 s
 # 0.884527872582
 #########################################################
+
+#########################################################
+clf = SVC(kernel="rbf")
+
+t6 = time()
+clf.fit(features_train, labels_train)
+print "SVC training time:", round(time() - t6, 3), "s"
+
+t7 = time()
+pred = clf.predict(features_test)
+print "SVC prediction time:", round(time() - t7, 3), "s"
+
+from sklearn.metrics import accuracy_score
+accuracy = accuracy_score(pred, labels_test)
+print(accuracy)
+
+# SVC training time: 0.101 s
+# SVC prediction time: 1.07 s
+# 0.616040955631
+#########################################################
+print "\nC=10.0"
+clf = SVC(C=10.0, kernel="rbf")
+
+t6 = time()
+clf.fit(features_train, labels_train)
+print "SVC training time:", round(time() - t6, 3), "s"
+
+t7 = time()
+pred = clf.predict(features_test)
+print "SVC prediction time:", round(time() - t7, 3), "s"
+
+from sklearn.metrics import accuracy_score
+accuracy = accuracy_score(pred, labels_test)
+print(accuracy)
+
+
+print "\nC=100.0"
+clf = SVC(C=100.0, kernel="rbf")
+
+t6 = time()
+clf.fit(features_train, labels_train)
+print "SVC training time:", round(time() - t6, 3), "s"
+
+t7 = time()
+pred = clf.predict(features_test)
+print "SVC prediction time:", round(time() - t7, 3), "s"
+
+from sklearn.metrics import accuracy_score
+accuracy = accuracy_score(pred, labels_test)
+print(accuracy)
+
+
+print "\nC=1000.0"
+clf = SVC(C=1000.0, kernel="rbf")
+
+t6 = time()
+clf.fit(features_train, labels_train)
+print "SVC training time:", round(time() - t6, 3), "s"
+
+t7 = time()
+pred = clf.predict(features_test)
+print "SVC prediction time:", round(time() - t7, 3), "s"
+
+from sklearn.metrics import accuracy_score
+accuracy = accuracy_score(pred, labels_test)
+print(accuracy)
+
+
+print "\nC=10000.0"
+clf = SVC(C=10000.0, kernel="rbf")
+
+t6 = time()
+clf.fit(features_train, labels_train)
+print "SVC training time:", round(time() - t6, 3), "s"
+
+t7 = time()
+pred = clf.predict(features_test)
+print "SVC prediction time:", round(time() - t7, 3), "s"
+
+from sklearn.metrics import accuracy_score
+accuracy = accuracy_score(pred, labels_test)
+print(accuracy)
+
+# C=10.0
+# SVC training time: 0.097 s
+# SVC prediction time: 1.057 s
+# 0.616040955631
+#
+# C=100.0
+# SVC training time: 0.1 s
+# SVC prediction time: 1.059 s
+# 0.616040955631
+#
+# C=1000.0
+# SVC training time: 0.094 s
+# SVC prediction time: 1.01 s
+# 0.821387940842
+#
+# C=10000.0
+# SVC training time: 0.092 s
+# SVC prediction time: 0.851 s
+# 0.892491467577
