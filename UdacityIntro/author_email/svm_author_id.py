@@ -38,9 +38,14 @@ t = time()
 pred = clf.predict(features_test)
 print "SVC prediction time:", round(time() - t, 3), "s"
 
-print pred[10]
-print pred[26]
-print pred[50]
+# print pred[10]
+# print pred[26]
+# print pred[50]
+import numpy
+num_chris = numpy.count_nonzero(pred)
+print "# predicted to be Chris(1) class:"
+print(num_chris)
+# 877
 
 from sklearn.metrics import accuracy_score
 accuracy = accuracy_score(pred, labels_test)
