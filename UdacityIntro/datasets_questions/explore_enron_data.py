@@ -94,3 +94,92 @@ print enron_data["SKILLING JEFFREY K"]["exercised_stock_options"]
 # A7:
 #   exercised_stock_options = 19250000
 
+# Q8:
+#   RESEARCH THE ENRON FRAUD
+#   In the coming lessons, we’ll talk about how the best features are often motivated by our human understanding of
+#   the problem at hand. In this case, that means knowing a little about the story of the Enron fraud.
+#
+#   If you have an hour and a half to spare, “Enron: The Smartest Guys in the Room” is a documentary that gives
+#   an amazing overview of the story. Alternatively, there are plenty of archival newspaper stories that chronicle
+#   the rise and fall of Enron.
+#
+#   Which of these schemes was Enron not involved in?
+#
+#   - selling assets to shell companies at the end of each month, and buying them back at the beginning of
+#       the next month to hide accounting losses
+#
+#   - causing electrical grid failures in California
+#
+#   - illegally obtained a government report that enabled them to corner the market on
+#       frozen concentrated orange juice futures
+#
+#   - conspiring to give a Saudi prince expedited American citizenship
+#
+#   - a plan in collaboration with Blockbuster movies to stream movies over the internet
+#
+# A8:
+#   That's right, only 2 of these schemes are made up.  By the way--the orange juice futures scheme was the plot
+#   of "Trading Places," and the citizenship fraud was "American Hustle."  We crack ourselves up sometimes...
+#
+#   (x) illegally obtained a government report that enabled them to corner the market on
+#       frozen concentrated orange juice futures
+#   (x) conspiring to give a Saudi prince expedited American citizenship
+
+# Q9:
+#   Who was the CEO of Enron during most of the time that fraud was being perpetrated?
+#
+# A9:
+#   Jeffrey Skilling
+
+# Q10:
+#   Who was chairman of the Enron board of directors?
+#
+# A10:
+#   Ken Lay
+
+# Q11:
+#   Who was CFO (chief financial officer) of Enron during most of the time that fraud was going on?
+#
+# A11:
+#   Andrew Fastow
+
+# Q12:
+#   Of these three individuals (Lay, Skilling and Fastow), who took home the most money
+#   (largest value of “total_payments” feature)?
+#   How much money did that person get?
+print "SKILLING JEFFREY K's total_payments:"
+print enron_data["SKILLING JEFFREY K"]["total_payments"]
+print "LAY KENNETH L's total_payments:"
+print enron_data["LAY KENNETH L"]["total_payments"]
+print "FASTOW ANDREW S's total_payments:"
+print enron_data["FASTOW ANDREW S"]["total_payments"]
+# A12:
+#   Lay Kenneth L got the most money... by a lot.
+#   103559793
+
+# Q13:
+#   For nearly every person in the dataset, not every feature has a value.
+#   How is it denoted when a feature doesn’t have a well-defined value?
+#
+# A13:
+#   NaN aka Not a Number is the correct response!
+
+# Q14:
+#   How many folks in this dataset have a quantified salary? What about a known email address?
+valid_salary_count = 0
+for person_name in enron_data:
+    if enron_data[person_name]["salary"] != 'NaN':
+        valid_salary_count += 1
+print "valid_salary_count =", valid_salary_count
+
+valid_email_count = 0
+for person_name in enron_data:
+    if enron_data[person_name]["email_address"] != 'NaN':
+        valid_email_count += 1
+print "valid_email_count =", valid_email_count
+# A14:
+#   Yes, 95 have a quantified salary. 111 have a known email address.
+
+
+
+
